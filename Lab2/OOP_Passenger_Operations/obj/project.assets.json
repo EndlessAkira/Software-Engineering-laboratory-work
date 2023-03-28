@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uni\\2 курс 2 семестр\\КПО\\OOP_Passenger_Operations\\OOP_Passenger_Operations\\OOP_Passenger_Operations.csproj",
+      "projectUniqueName": "D:\\Uni\\2 курс 2 семестр\\КПО\\BNTU-Study---KPO\\Lab2\\OOP_Passenger_Operations\\OOP_Passenger_Operations.csproj",
       "projectName": "OOP_Passenger_Operations",
-      "projectPath": "D:\\Uni\\2 курс 2 семестр\\КПО\\OOP_Passenger_Operations\\OOP_Passenger_Operations\\OOP_Passenger_Operations.csproj",
+      "projectPath": "D:\\Uni\\2 курс 2 семестр\\КПО\\BNTU-Study---KPO\\Lab2\\OOP_Passenger_Operations\\OOP_Passenger_Operations.csproj",
       "packagesPath": "C:\\Users\\Akira\\.nuget\\packages\\",
-      "outputPath": "D:\\Uni\\2 курс 2 семестр\\КПО\\OOP_Passenger_Operations\\OOP_Passenger_Operations\\obj\\",
+      "outputPath": "D:\\Uni\\2 курс 2 семестр\\КПО\\BNTU-Study---KPO\\Lab2\\OOP_Passenger_Operations\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Akira\\AppData\\Roaming\\NuGet\\NuGet.Config",
