@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Passenger_Operations", "OOP_Passenger_Operations.csproj", "{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12433E63-46CA-4FBE-87AF-28CB436015B1}
+	EndGlobalSection
+EndGlobal
