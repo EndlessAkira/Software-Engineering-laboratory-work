@@ -5,20 +5,28 @@
         // Поле автобусов компании
         protected Bus[] buses = new Bus[5];
 
+        // Дефолтные переменные для каждого типа данных
+        public const int _defaultInt = -1;
+        public const string _defaultString = null;
+
         // Общая вместительность автобусов компании
-        public int _totalCapacityForCategory => ReturnTotalCapacityForCategory();
+        public int _totalCapacityForCategory;
 
         // Вместительность и название самого вместительного автобуса компании
-        public int _mostCapacity => ReturnMaxNumberCapacityBusesForCategory();
-        public string _modelNameMostCapaciousBus => ReturnCapacityModelForCategory();
+        //public int _mostCapacity = -1;
+        public Bus _mostCapaciousBus = null;
 
         // Кол-во шт. и название самого популярного автобуса компании
-        public int _maxCount => ReturnMaxNumberIdenticalBusesForCategory();
-        public string _modelNameMostPopularBus => ReturnPopularModelForCategory();
+        // public int _maxCount = -1;
+        public Bus _mostPopularBus = null;
+        //public string? _modelNameMostPopularBus = null;
 
         // Проценты самого изношенного и самого целого автобусов компании
-        public int _maxCondition => ReturnMaxConditionForCategory();
-        public int _minCondition => ReturnMinConditionForCategory();
+        public Bus _maxConditionBus = null;
+        public Bus _minConditionBus = null;
+
+        //public int _maxCondition = -1;
+        //public int _minCondition = -1;
 
 
 
@@ -28,22 +36,20 @@
         // Метод возврата общей вместительности автобусов компании (кол-во чел.)
         public abstract int ReturnTotalCapacityForCategory();
 
-        // Метод возврата названия модели самого вместительного автобуса компании
-        public abstract string ReturnCapacityModelForCategory();
 
-        // Метод возврата количества мест шт. самого вместительного автобуса
-        public abstract int ReturnMaxNumberCapacityBusesForCategory();
 
-        // Метод возврата количества шт. самого популярного автобуса
-        public abstract int ReturnMaxNumberIdenticalBusesForCategory();
+        // Метод возврата самого вместительного автобуса компании
+        public abstract Bus ReturnMostCapacityBusForCategory();
 
-        // Метод возврата названия самой популярной модели автобуса компании
-        public abstract string ReturnPopularModelForCategory();
+        // Метод возврата самого популярного автобуса компании
+        public abstract Bus ReturnMostPopularBusForCategory();
 
-        // Метод возврата маскимального процента изношенности из всех автобусов компании
-        public abstract int ReturnMaxConditionForCategory();
 
-        // Метод возврата минимального процента изношенности из всех автобусов компании
-        public abstract int ReturnMinConditionForCategory();
+
+        // Метод возврата самого изношенного автобуса компании
+        public abstract Bus ReturnMaxConditionBusForCategory();
+
+        // Метод возврата самого целого автобуса компании
+        public abstract Bus ReturnMinConditionBusForCategory();
     }
 }

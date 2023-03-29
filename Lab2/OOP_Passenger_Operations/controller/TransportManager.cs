@@ -22,33 +22,35 @@
             ["МАЗ-216"] = 190
         };
         // Метод генерации модели автобуса
-        public string GenerateBusModel()
+        public static string GenerateBusModel()
         {
             return _busModels[new Random().Next(_busModels.Count - 1)];
         }
         
         // Метод генерации вместительности автобуса
-        public int GenerateBusCapacity(string _busModel)
+        public static int GenerateBusCapacity(string _busModel)
         {
             return _busCapacity[_busModel];
         }
 
         // Метод генерации процента изношенности автобуса
-        public int GenerateBusCondition()
+        public static int GenerateBusCondition()
         {
             return new Random().Next(0,100);
         }
 
+
+
         // Метод поиска самого вместительного автобуса компании
-        public string ReturnModelNameMostCapaciousBus(Bus[] _buses)
+        public static Bus ReturnMostCapaciousBus(Bus[] _buses)
         {
-            string _mostCapaciousBus = _buses[0]._modelName;
+            Bus _mostCapaciousBus = _buses[0];
             int _maxCapacity = _buses[0]._capacity;
             for(int i = 1; i < _buses.Length; i++)
             {
                 if (_buses[i]._capacity > _maxCapacity)
                 {
-                    _mostCapaciousBus = _buses[i]._modelName;
+                    _mostCapaciousBus = _buses[i];
                     _maxCapacity = _buses[i]._capacity;
                 }
             }
@@ -56,29 +58,69 @@
         }
 
         // Метод поиска самого популярного автобуса компании
-        public string ReturnModelNameMostPopularBus(Bus[] _buses)
+        public static Bus ReturnMostPopularBus(Bus[] _buses)
         {
-            string _mostPopularBus = _buses[0]._modelName;
-            int _maxCount = 0;
-            for(int i = 0; i < _buses.Length - 1; i++)
+            int _maxCount = -1;
+            Bus _mostPopularBus = _buses[0];
+
+            foreach(Bus _hauptBus in _buses)
             {
-                int _localCount = 1;
-                for(int j = i + 1; j < _buses.Length; j++)
+                int _localCount = 0;
+                foreach(Bus _bus in _buses)
                 {
-                    if (_buses[i]._modelName == _buses[j]._modelName)
+                    if(_hauptBus._modelName == _bus._modelName)
                     {
                         _localCount++;
                     }
                 }
                 if(_localCount > _maxCount)
                 {
-                    _mostPopularBus = _buses[i]._modelName;
+                    _mostPopularBus = _hauptBus;
                     _maxCount = _localCount;
                 }
             }
-
             return _mostPopularBus;
         }
+
+        // Метод поиска самого потрепанного автобуса
+        public static Bus ReturnMaxConditionBus(Bus[] _buses)
+        {
+            int _maxCondition = -1;
+            Bus _maxConditionBus = _buses[0];
+            foreach(Bus _bus in _buses)
+            {
+                if(_bus._condition > _maxCondition)
+                {
+                    _maxConditionBus = _bus;
+                    _maxCondition = _bus._condition;
+                }
+            }
+            return _maxConditionBus;
+        }
+
+        // Метод поиска самого целого автобуса
+        public static Bus ReturnMinConditionBus(Bus[] _buses)
+        {
+            int _minCondition = 101;
+            Bus _minConditionBus = _buses[0];
+            foreach (Bus _bus in _buses)
+            {
+                if (_bus._condition < _minCondition)
+                {
+                    _minConditionBus = _bus;
+                    _minCondition = _bus._condition;
+                }
+            }
+            return _minConditionBus;
+        }
+
+
+
+
+
+
+
+
 
         // Метод возврата общей вместительности автобусов всех компаний
         public int ReturnTotalCapacity(TransportParks transportParks)
@@ -89,53 +131,25 @@
         // Метод возврата самой вместительной модели автобуса из всех компаний
         public string ReturnCapacityModel(TransportParks transportParks)
         {
-            int[] _capacity = { transportParks._brestOblAvtoTrans._mostCapacity };
-            string[] _models = { transportParks._brestOblAvtoTrans._modelNameMostCapaciousBus };
-
-            int _maxCapacity = _capacity[0];
-            string _modelNameMaxCapaciousBus = _models[0];
-
-            for(int i = 1; i < _capacity.Length; i ++)
-            {
-                if (_capacity[i] > _maxCapacity)
-                {
-                    _modelNameMaxCapaciousBus = _models[i];
-                    _maxCapacity = _capacity[i];
-                }
-            }
-            return _modelNameMaxCapaciousBus;
+            return "";
         }
 
         // Метод возврата самой популярной модели автобуса из всех компаний
         public string ReturnPopularModel(TransportParks transportParks)
         {
-            int[] _popular = { transportParks._brestOblAvtoTrans._maxCount };
-            string[] _models = { transportParks._brestOblAvtoTrans._modelNameMostPopularBus };
-
-            int _maxPopular = _popular[0];
-            string _modelNameMostPopularBus = _models[0];
-
-            for (int i = 1; i < _popular.Length; i++)
-            {
-                if (_popular[i] > _maxPopular)
-                {
-                    _modelNameMostPopularBus = _models[i];
-                    _maxPopular = _popular[i];
-                }
-            }
-            return _modelNameMostPopularBus;
+            return "";
         }
 
         // Метод возврата маскимального процента изношенности автобуса из всех компаний
         public int ReturnMaxCondition(TransportParks transportParks)
         {
-            return Math.Max(transportParks._brestOblAvtoTrans._maxCondition, transportParks._brestOblAvtoTrans._maxCondition);
+            return 0;
         }
 
         // Метод возврата минимального процента изношенности автобуса из всех компаний
         public int ReturnMinCondition(TransportParks transportParks)
         {
-            return Math.Min(transportParks._brestOblAvtoTrans._minCondition, transportParks._brestOblAvtoTrans._minCondition);
+            return 0;
         }
 
         // Метод вывода данных об автобусах для каждой компании

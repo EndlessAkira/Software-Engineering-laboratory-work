@@ -3,22 +3,10 @@
     internal class Bus
     {
         // Название модели
-        public string _modelName
-        {
-            get { return _modelName; }
-            set { _modelName = value; }
-        }
+        public string _modelName;
         //Вместимость модели
-        public int _capacity
-        {
-            get { return _capacity; }
-            set { _capacity = value; }
-        }
+        public int _capacity;
         // Степень "убитости" автобуса
-        public int _condition
-        {
-            get { return _condition; }
-            set { _condition = value; }
-        }
+        public int _condition;
     }
 }
