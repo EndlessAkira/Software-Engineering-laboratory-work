@@ -18,12 +18,12 @@
             throw new NotImplementedException();
         }
 
-        public override float ReturnMaxConditionForCategory()
+        public override int ReturnMaxConditionForCategory()
         {
             throw new NotImplementedException();
         }
 
-        public override float ReturnMinConditionForCategory()
+        public override int ReturnMinConditionForCategory()
         {
             throw new NotImplementedException();
         }
@@ -34,6 +34,16 @@
         }
 
         public override int ReturnTotalCapacityForCategory()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int ReturnMaxNumberCapacityBusesForCategory()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override int ReturnMaxNumberIdenticalBusesForCategory()
         {
             throw new NotImplementedException();
         }
