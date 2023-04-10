@@ -4,6 +4,7 @@
     {
         public BrestOblAvtoTrans()
         {
+<<<<<<< Updated upstream
             foreach(Bus bus in buses)
             {
                 //
@@ -46,6 +47,9 @@
         public override int ReturnMaxNumberIdenticalBusesForCategory()
         {
             throw new NotImplementedException();
+=======
+            BaseConstructor("БрестОблАвтоТранс");
+>>>>>>> Stashed changes
         }
     }
 }

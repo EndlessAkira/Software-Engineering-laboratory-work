@@ -10,21 +10,21 @@
             _transportParks = new TransportParks();
             _transportManager = new TransportManager();
 
-            // Вывод общей информации по автобусным паркам
-            Console.WriteLine("\n\n            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #1");
-            Console.WriteLine(_transportParks.GetInfo());
-            
+            //// Вывод общей информации по автобусным паркам
+            //Console.WriteLine("\n\n            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #1");
+            //Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.AllParks)}");
+
             // Вывод информации по БрестОблАвтоТрансу
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #2");
-            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, "BrestOblAvtoTrans")}");
+            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.BrestOblAvtoTrans)}");
 
-            // Вывод информации по МинскОблАвтоТрансу
+            //// Вывод информации по МинскОблАвтоТрансу
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #3");
-            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, "MinskOblAvtoTrans")}");
+            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.MinskOblAvtoTrans)}");
 
-            // Вывод информации по ВитебскОблАвтоТрансу
+            //// Вывод информации по ВитебскОблАвтоТрансу
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #4");
-            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, "VitebskOblAvtoTrans")}");
+            Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.VitebskOblAvtoTrans)}");
         }
     }
 }
