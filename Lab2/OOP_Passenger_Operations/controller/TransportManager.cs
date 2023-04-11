@@ -1,4 +1,6 @@
-﻿namespace OOP_Passenger_Operations
+﻿using OOP_Passenger_Operations.model;
+
+namespace OOP_Passenger_Operations
 {
     internal class TransportManager
     {
@@ -22,79 +24,65 @@
             ["МАЗ-216"] = 190
         };
         private int _currentParkIndex;
+
+
+
         // Метод генерации модели автобуса
-        public string GenerateBusModel()
+        public static string GenerateBusModel()
         {
             return _busModels[new Random().Next(_busModels.Count - 1)];
         }
-
+        // Метод генерации гаражного номера
+        public static string GenerateGarageNumber()
+        {
+            string number = "";
+            for (int i = 0; i < 7; i++)
+                number += Convert.ToString(new Random().Next(0, 100));
+            return number;
+        }
         // Метод генерации вместительности автобуса
-        public int GenerateBusCapacity(string _busModel)
+        public static int GenerateBusCapacity(string _busModel)
         {
             return _busCapacity[_busModel];
         }
-
         // Метод генерации процента изношенности автобуса
-        public int GenerateBusCondition()
+        public static int GenerateBusCondition()
         {
             return new Random().Next(0, 100);
         }
 
+
+
         // Метод поиска самого вместительного автобуса компании
-        public string ReturnModelNameMostCapaciousBus(Bus[] _buses)
+        public static Bus ReturnMostCapaciousBus(Bus[] _buses)
         {
-            string _mostCapaciousBus = _buses[0]._modelName;
-            int _maxCapacity = _buses[0]._capacity;
+            Bus _mostCapaciousBus = _buses[0];
+            int _maxCapacity = _buses[0].GetModelCapacity();
             for (int i = 1; i < _buses.Length; i++)
             {
-                if (_buses[i]._capacity > _maxCapacity)
+                if (_buses[i].GetModelCapacity() > _maxCapacity)
                 {
-                    _mostCapaciousBus = _buses[i]._modelName;
-                    _maxCapacity = _buses[i]._capacity;
+                    _mostCapaciousBus = _buses[i];
+                    _maxCapacity = _buses[i].GetModelCapacity();
                 }
             }
             return _mostCapaciousBus;
         }
-
         // Метод поиска самого популярного автобуса компании
-        public string ReturnModelNameMostPopularBus(Bus[] _buses)
+        public static Bus ReturnMostPopularBus(Bus[] _buses)
         {
-<<<<<<< Updated upstream
-            string _mostPopularBus = _buses[0]._modelName;
-            int _maxCount = 0;
-            for(int i = 0; i < _buses.Length - 1; i++)
+            Bus _mostCapaciousBus = _buses[0];
+            int _maxCapacity = _buses[0].GetModelCapacity();
+            for (int i = 1; i < _buses.Length; i++)
             {
-                int _localCount = 1;
-                for(int j = i + 1; j < _buses.Length; j++)
+                if (_buses[i].GetModelCapacity() > _maxCapacity)
                 {
-                    if (_buses[i]._modelName == _buses[j]._modelName)
-=======
-            int _maxCount = -1;
-            Bus _mostPopularBus = _buses[0];
-
-            foreach (Bus _hauptBus in _buses)
-            {
-                int _localCount = 0;
-                foreach (Bus _bus in _buses)
-                {
-                    if (_hauptBus._modelName == _bus._modelName)
->>>>>>> Stashed changes
-                    {
-                        _localCount++;
-                    }
-                }
-                if (_localCount > _maxCount)
-                {
-                    _mostPopularBus = _buses[i]._modelName;
-                    _maxCount = _localCount;
+                    _mostCapaciousBus = _buses[i];
+                    _maxCapacity = _buses[i].GetModelCapacity();
                 }
             }
-
-            return _mostPopularBus;
+            return _mostCapaciousBus;
         }
-
-<<<<<<< Updated upstream
-=======
         // Метод поиска самого потрепанного автобуса
         public static Bus ReturnMaxConditionBus(Bus[] _buses)
         {
@@ -102,15 +90,14 @@
             Bus _maxConditionBus = _buses[0];
             foreach (Bus _bus in _buses)
             {
-                if (_bus._condition > _maxCondition)
+                if (_bus.GetModelCondition() > _maxCondition)
                 {
                     _maxConditionBus = _bus;
-                    _maxCondition = _bus._condition;
+                    _maxCondition = _bus.GetModelCondition();
                 }
             }
             return _maxConditionBus;
         }
-
         // Метод поиска самого целого автобуса
         public static Bus ReturnMinConditionBus(Bus[] _buses)
         {
@@ -118,10 +105,10 @@
             Bus _minConditionBus = _buses[0];
             foreach (Bus _bus in _buses)
             {
-                if (_bus._condition < _minCondition)
+                if (_bus.GetModelCondition() < _minCondition)
                 {
                     _minConditionBus = _bus;
-                    _minCondition = _bus._condition;
+                    _minCondition = _bus.GetModelCondition();
                 }
             }
             return _minConditionBus;
@@ -129,94 +116,73 @@
 
 
 
-
-
-
-
-
-
->>>>>>> Stashed changes
         // Метод возврата общей вместительности автобусов всех компаний
         public int ReturnTotalCapacity(TransportParks transportParks)
         {
-            return transportParks._brestOblAvtoTrans._totalCapacityForCategory;
+            return 0;
         }
-
         // Метод возврата самой вместительной модели автобуса из всех компаний
         public string ReturnCapacityModel(TransportParks transportParks)
         {
-            int[] _capacity = { transportParks._brestOblAvtoTrans._mostCapacity };
-            string[] _models = { transportParks._brestOblAvtoTrans._modelNameMostCapaciousBus };
-
-            int _maxCapacity = _capacity[0];
-            string _modelNameMaxCapaciousBus = _models[0];
-
-            for(int i = 1; i < _capacity.Length; i ++)
-            {
-                if (_capacity[i] > _maxCapacity)
-                {
-                    _modelNameMaxCapaciousBus = _models[i];
-                    _maxCapacity = _capacity[i];
-                }
-            }
-            return _modelNameMaxCapaciousBus;
+            return "хухуй";
         }
-
         // Метод возврата самой популярной модели автобуса из всех компаний
         public string ReturnPopularModel(TransportParks transportParks)
         {
-            int[] _popular = { transportParks._brestOblAvtoTrans._maxCount };
-            string[] _models = { transportParks._brestOblAvtoTrans._modelNameMostPopularBus };
-
-            int _maxPopular = _popular[0];
-            string _modelNameMostPopularBus = _models[0];
-
-            for (int i = 1; i < _popular.Length; i++)
-            {
-                if (_popular[i] > _maxPopular)
-                {
-                    _modelNameMostPopularBus = _models[i];
-                    _maxPopular = _popular[i];
-                }
-            }
-            return _modelNameMostPopularBus;
+            return "хуй";
         }
-
         // Метод возврата маскимального процента изношенности автобуса из всех компаний
         public int ReturnMaxCondition(TransportParks transportParks)
         {
-            return Math.Max(transportParks._brestOblAvtoTrans._maxCondition, transportParks._brestOblAvtoTrans._maxCondition);
+            List<Bus> list = new();
+            for (int i = 0; i < transportParks._parks.Length; i++)
+            {
+                list.Add(transportParks._parks[i]._minConditionBus);
+            }
+            int _maxCondition = -1;
+            foreach (Bus bus in list)
+            {
+                if (bus.GetModelCondition() > _maxCondition)
+                {
+                    _maxCondition = bus.GetModelCondition();
+                }
+            }
+            return _maxCondition;
         }
-
         // Метод возврата минимального процента изношенности автобуса из всех компаний
         public int ReturnMinCondition(TransportParks transportParks)
         {
-            return Math.Min(transportParks._brestOblAvtoTrans._minCondition, transportParks._brestOblAvtoTrans._minCondition);
+            List<Bus> list = new();
+            for (int i = 0; i < transportParks._parks.Length; i++)
+            {
+                list.Add(transportParks._parks[i]._minConditionBus);
+            }
+            int _minCondition = 101;
+            foreach(Bus bus in list)
+            {
+                if(bus.GetModelCondition() < _minCondition)
+                {
+                    _minCondition = bus.GetModelCondition();
+                }
+            }
+            return _minCondition;
         }
-
         // Метод вывода данных об автобусах для каждой компании
+
+
+
         public string ReturnTotalTransportInfo(TransportParks _transportParks, TransportParks.TransportPark park)
         {
-            
+
             _currentParkIndex = (int)park;
-            return $"                        Информация об автопарке {_transportParks._parks[_currentParkIndex].GetCompanyName()}\r\n            " +
+            return $"                        Информация об автопарке {_transportParks._parks[_currentParkIndex].GetBusParkName()}\r\n            " +
             $"============================================================================================\r\n" +
             $"{_transportParks._parks[_currentParkIndex].ReturnTransportInfo()}\r\n" +
-            $"            Самая вместительная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostCapacityBusForCategory()._modelName} - {_transportParks._parks[_currentParkIndex]._mostCapaciousBus._capacity} чел.\r\n" +
-            $"            Самая популярная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostPopularBusForCategory()._modelName}\r\n" +
-            $"            Самый изношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory()._modelName} - {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory()._condition} %\r\n" +
-            $"            Cамый неизношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory()._modelName} - {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory()._condition} %\r\n" +
+            $"            Самая вместительная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostCapacityBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex]._mostCapaciousBus.GetModelCapacity()} чел.\r\n" +
+            $"            Самая популярная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostPopularBusForCategory().GetModelName()}\r\n" +
+            $"            Самый изношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory().GetModelCondition()} %\r\n" +
+            $"            Cамый неизношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory().GetModelCondition()} %\r\n" +
             $"            Общая вместительность автопарка: {_transportParks._parks[_currentParkIndex].ReturnTotalCapacityForCategory()} человек\r\n";
         }
     }
 }
-        //else
-        //{
-        //    return $"                        Информация об автопарке {park.ToString()}\r\n            " +
-        //        $"============================================================================================\r\n" +
-        //        $"            {_transportParks._brestOblAvtoTrans.ReturnTransportInfo()}\\n\r\n" +
-        //        $"            Самая вместительная модель автопарка: {_transportParks._brestOblAvtoTrans.ReturnMostCapacityBusForCategory()} - {_transportParks._brestOblAvtoTrans._mostCapaciousBus._capacity} чел.\r\n" +
-        //        $"            Самая популярная модель автопарка: {{user.brest_obl_avto_trans.return_popular_model_for_category()}}\r\n" +
-        //        $"            Max condition for category == {{user.brest_obl_avto_trans.return_max_condition_for_category()}} %\r\n" +
-        //        $"            Min condition for category == {{user.brest_obl_avto_trans.return_min_condition_for_category()}} %\r\n" +
-        //        $"            Total capacity for category == {{user.brest_obl_avto_trans.return_total_capacity_for_category()}} человек\r\n            Total capacity for all == {{self.return_total_capacity(user=user)}} человек"

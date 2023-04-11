@@ -1,4 +1,6 @@
-﻿namespace OOP_Passenger_Operations
+﻿using OOP_Passenger_Operations.model;
+
+namespace OOP_Passenger_Operations
 {
     internal class TransportParks
     {

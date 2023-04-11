@@ -1,6 +1,6 @@
-﻿namespace OOP_Passenger_Operations
+﻿namespace OOP_Passenger_Operations.model
 {
-    internal class MinskOblAvtoTrans: OblAvtoTrans
+    internal class MinskOblAvtoTrans : OblAvtoTrans
     {
         public MinskOblAvtoTrans()
         {

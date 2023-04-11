@@ -18,11 +18,11 @@
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #2");
             Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.BrestOblAvtoTrans)}");
 
-            //// Вывод информации по МинскОблАвтоТрансу
+            // Вывод информации по МинскОблАвтоТрансу
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #3");
             Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.MinskOblAvtoTrans)}");
 
-            //// Вывод информации по ВитебскОблАвтоТрансу
+            // Вывод информации по ВитебскОблАвтоТрансу
             Console.WriteLine("            ////////////////////////////////////////////////////////////////////////// ОБРАЗЕЦ РАБОТЫ #4");
             Console.WriteLine($"{_transportManager.ReturnTotalTransportInfo(_transportParks, TransportParks.TransportPark.VitebskOblAvtoTrans)}");
         }
