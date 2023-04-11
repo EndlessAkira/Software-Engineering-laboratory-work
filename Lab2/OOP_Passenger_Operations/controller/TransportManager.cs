@@ -1,4 +1,5 @@
-﻿using OOP_Passenger_Operations.model;
+﻿using OOP_Passenger_Operations.data;
+using OOP_Passenger_Operations.model;
 
 namespace OOP_Passenger_Operations
 {
@@ -23,7 +24,6 @@ namespace OOP_Passenger_Operations
             ["МАЗ-152"] = 45,
             ["МАЗ-216"] = 190
         };
-        private int _currentParkIndex;
 
 
 
@@ -35,9 +35,8 @@ namespace OOP_Passenger_Operations
         // Метод генерации гаражного номера
         public static string GenerateGarageNumber()
         {
-            string number = "";
-            for (int i = 0; i < 7; i++)
-                number += Convert.ToString(new Random().Next(0, 100));
+            int intNumber = new Random().Next(0, 10000);
+            string number = Convert.ToString(intNumber);
             return number;
         }
         // Метод генерации вместительности автобуса
@@ -135,7 +134,7 @@ namespace OOP_Passenger_Operations
         public int ReturnMaxCondition(TransportParks transportParks)
         {
             List<Bus> list = new();
-            for (int i = 0; i < transportParks._parks.Length; i++)
+            for (int i = 0; i < transportParks._parks.Count; i++)
             {
                 list.Add(transportParks._parks[i]._minConditionBus);
             }
@@ -153,7 +152,7 @@ namespace OOP_Passenger_Operations
         public int ReturnMinCondition(TransportParks transportParks)
         {
             List<Bus> list = new();
-            for (int i = 0; i < transportParks._parks.Length; i++)
+            for (int i = 0; i < transportParks._parks.Count; i++)
             {
                 list.Add(transportParks._parks[i]._minConditionBus);
             }
@@ -171,18 +170,28 @@ namespace OOP_Passenger_Operations
 
 
 
-        public string ReturnTotalTransportInfo(TransportParks _transportParks, TransportParks.TransportPark park)
+        public string ReturnTotalTransportInfo(TransportParks _transportParks, TransportParks.TransportParkList park)
         {
+            int _currentParkIndex = (int)park;
+            OblAvtoTrans _currentBusPark = _transportParks._parks[_currentParkIndex];
+            if (_currentBusPark != null)
+            {
+                Bus _mostCapaciousBus = _currentBusPark.ReturnMostCapacityBusForCategory();
+                Bus _mostPopularBus = _currentBusPark.ReturnMostPopularBusForCategory();
+                Bus _maxConditionBus = _currentBusPark.ReturnMaxConditionBusForCategory();
+                Bus _minConditionBus = _currentBusPark.ReturnMinConditionBusForCategory();
 
-            _currentParkIndex = (int)park;
-            return $"                        Информация об автопарке {_transportParks._parks[_currentParkIndex].GetBusParkName()}\r\n            " +
-            $"============================================================================================\r\n" +
-            $"{_transportParks._parks[_currentParkIndex].ReturnTransportInfo()}\r\n" +
-            $"            Самая вместительная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostCapacityBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex]._mostCapaciousBus.GetModelCapacity()} чел.\r\n" +
-            $"            Самая популярная модель автопарка: {_transportParks._parks[_currentParkIndex].ReturnMostPopularBusForCategory().GetModelName()}\r\n" +
-            $"            Самый изношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex].ReturnMaxConditionBusForCategory().GetModelCondition()} %\r\n" +
-            $"            Cамый неизношенный автобус автопарка: {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory().GetModelName()} - {_transportParks._parks[_currentParkIndex].ReturnMinConditionBusForCategory().GetModelCondition()} %\r\n" +
-            $"            Общая вместительность автопарка: {_transportParks._parks[_currentParkIndex].ReturnTotalCapacityForCategory()} человек\r\n";
+                return $"                        Информация об автопарке {_currentBusPark.GetBusParkName()}\r\n            " +
+                $"============================================================================================\r\n" +
+                $"{_currentBusPark.ReturnTransportInfo()}\r\n" +
+                $"            Самая вместительная модель автопарка: {_mostCapaciousBus.GetModelName()} (ГН {_mostCapaciousBus.GetGarageNumber()}) - {_mostCapaciousBus.GetModelCapacity()} чел.\r\n" +
+                $"            Самая популярная модель автопарка: {_mostPopularBus.GetModelName()} (ГН {_mostPopularBus.GetGarageNumber()})\r\n" +
+                $"            Самый изношенный автобус автопарка: {_maxConditionBus.GetModelName()} (ГН {_maxConditionBus.GetGarageNumber()}) - {_maxConditionBus.GetModelCondition()} %\r\n" +
+                $"            Cамый неизношенный автобус автопарка: {_minConditionBus.GetModelName()} (ГН {_minConditionBus.GetGarageNumber()}) - {_minConditionBus.GetModelCondition()} %\r\n" +
+                $"            Общая вместительность автопарка: {_currentBusPark.ReturnTotalCapacityForCategory()} человек\r\n";
+            }
+            else
+                return "Данный парк не существует/упразднён.";
         }
     }
 }

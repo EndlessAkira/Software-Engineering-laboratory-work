@@ -1,4 +1,4 @@
-﻿using OOP_Passenger_Operations.model;
+﻿using OOP_Passenger_Operations.data;
 
 namespace OOP_Passenger_Operations
 {
@@ -37,9 +37,10 @@ namespace OOP_Passenger_Operations
                 buses[i] = new Bus(_modelName, _garageNuber, _capacity, _condition);
             }
         }
-
         public int GetSizeBusPark() => buses.Length;
         public string GetBusParkName() => _busParkName;
+
+
 
         // Метод возврата текстовой информации об автобусах компании
         public string ReturnTransportInfo()
@@ -47,10 +48,12 @@ namespace OOP_Passenger_Operations
             string message = "";
             for (int i = 0; i < buses.Length; i++)
             {
-                message += $"            Автобус {_busParkName} #{i + 1} : модель - {buses[i].GetModelName()}, вместимость == {buses[i].GetModelCapacity()}, изношенность == {buses[i].GetModelCondition()} %\r\n";
+                message += $"            Автобус {_busParkName} #{i + 1} : модель - {buses[i].GetModelName()}, ГН {buses[i].GetGarageNumber()}, вместимость == {buses[i].GetModelCapacity()}, изношенность == {buses[i].GetModelCondition()} %\r\n";
             }
             return message;
         }
+
+
 
         // Метод возврата общей вместительности автобусов компании (кол-во чел.)
         public int ReturnTotalCapacityForCategory()
