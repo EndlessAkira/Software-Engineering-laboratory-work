@@ -4,9 +4,9 @@ namespace OOP_Passenger_Operations
 {
     internal class TransportParks
     {
-        private const int _numberOfRegions = 7;
+        public static readonly int _numberOfRegions = 7;
         public List<OblAvtoTrans> _parks = new List<OblAvtoTrans>();
-        public enum TransportParkList
+        internal enum TransportParkList
         {
             BrestOblAvtoTrans,
             VitebskOblAvtoTrans,
@@ -56,7 +56,9 @@ namespace OOP_Passenger_Operations
                 return true;
             }
             else
+            {
                 return false;
+            }
         }
         public bool DeleteBusPark(TransportParkList _index)
         {
