@@ -1,10 +1,12 @@
-﻿namespace OOP_Passenger_Operations.model
+﻿using OOP_Passenger_Operations.model.other;
+
+namespace OOP_Passenger_Operations.model
 {
     internal class GomelOblAvtoTrans: OblAvtoTrans
     {
-        public GomelOblAvtoTrans()
+        public GomelOblAvtoTrans(string _parkName = "ГомельОблАвтоТранс", int _busCount = 19)
         {
-            BaseConstructor("ГомельОблАвтоТранс", 7);
+            BaseConstructor(_parkName, _busCount);
         }
     }
 }

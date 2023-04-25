@@ -1,8 +1,9 @@
 ﻿using OOP_Passenger_Operations.model;
+using OOP_Passenger_Operations.model.other;
 
 namespace OOP_Passenger_Operations
 {
-    internal class TransportParks
+    internal class NationalBusPark
     {
         public static readonly int _numberOfRegions = 7;
         public List<OblAvtoTrans> _parks = new List<OblAvtoTrans>();
@@ -17,40 +18,39 @@ namespace OOP_Passenger_Operations
             MinskTrans,
             AllParks
         }
-        public TransportParks()
+        public NationalBusPark()
         {
             for(int i = 0; i < _numberOfRegions; i++)
             {
                 _parks.Add(null);
             }
-            Console.WriteLine("Отработал конструктор объекта класса TransportParks");
         }
-        public bool AddBusPark(TransportParkList _index)
+        public bool AddBusPark(TransportParkList _index, string _parkName, int _busCount)
         {
             if (_parks[(int)_index] == null)
             {
                 switch (_index)
                 {
                     case TransportParkList.BrestOblAvtoTrans:
-                        _parks[(int)_index] = new BrestOblAvtoTrans();
+                        _parks[(int)_index] = new BrestOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.VitebskOblAvtoTrans:
-                        _parks[(int)_index] = new VitebskOblAvtoTrans();
+                        _parks[(int)_index] = new VitebskOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.GomelOblAvoTrans:
-                        _parks[(int)_index] = new GomelOblAvtoTrans();
+                        _parks[(int)_index] = new GomelOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.GrodnoOblAvtoTrans:
-                        _parks[(int)_index] = new GrognoOblAvtoTrans();
+                        _parks[(int)_index] = new GrognoOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.MinskOblAvtoTrans:
-                        _parks[(int)_index] = new MinskOblAvtoTrans();
+                        _parks[(int)_index] = new MinskOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.MogilevOblAvtoTrans:
-                        _parks[(int)_index] = new MogilevOblAvtoTrans();
+                        _parks[(int)_index] = new MogilevOblAvtoTrans(_parkName, _busCount);
                         break;
                     case TransportParkList.MinskTrans:
-                        _parks[(int)_index] = new MinskTrans();
+                        _parks[(int)_index] = new MinskTrans(_parkName, _busCount);
                         break;
                 }
                 return true;
@@ -70,9 +70,23 @@ namespace OOP_Passenger_Operations
             else
                 return false;
         }
-        ~TransportParks()
+        public bool IsFill()
         {
-            Console.WriteLine("Отработал деструктор объекта класса TransportParks");
+            bool result = true;
+            for (int i = 0; i < _numberOfRegions; i++)
+            {
+                result = result && (_parks[i] != null);
+            }
+            return result;
+        }
+        public bool IsEmpty()
+        {
+            bool result = true;
+            for (int i = 0; i < _numberOfRegions; i++)
+            {
+                result = result && (_parks[i] == null);
+            }
+            return result;
         }
     }
 }

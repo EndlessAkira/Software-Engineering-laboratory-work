@@ -1,6 +1,6 @@
-﻿using OOP_Passenger_Operations.data;
+﻿using OOP_Passenger_Operations.controller;
 
-namespace OOP_Passenger_Operations
+namespace OOP_Passenger_Operations.model.other
 {
     abstract internal class OblAvtoTrans
     {
@@ -29,11 +29,11 @@ namespace OOP_Passenger_Operations
             buses = new Bus[busCount];
             for (int i = 0; i < busCount; i++)
             {
-                
-                string _modelName = TransportManager.GenerateBusModel();
-                string _garageNuber = TransportManager.GenerateGarageNumber();
-                int _capacity = TransportManager.GenerateBusCapacity(_modelName);
-                int _condition = TransportManager.GenerateBusCondition();
+
+                string _modelName = MinskAutomobileFactory.GenerateBusModel();
+                string _garageNuber = MinskAutomobileFactory.GenerateGarageNumber();
+                int _capacity = MinskAutomobileFactory.GenerateBusCapacity(_modelName);
+                int _condition = MinskAutomobileFactory.GenerateBusCondition();
                 buses[i] = new Bus(_modelName, _garageNuber, _capacity, _condition);
             }
         }
@@ -73,7 +73,7 @@ namespace OOP_Passenger_Operations
         {
             if (_mostCapaciousBus == null)
             {
-                _mostCapaciousBus = TransportManager.ReturnMostCapaciousBus(buses);
+                _mostCapaciousBus = StateBusInspection.ReturnMostCapaciousBus(buses);
             }
             return _mostCapaciousBus;
         }
@@ -83,7 +83,7 @@ namespace OOP_Passenger_Operations
         {
             if (_mostPopularBus == null)
             {
-                _mostPopularBus = TransportManager.ReturnMostPopularBus(buses);
+                _mostPopularBus = StateBusInspection.ReturnMostPopularBus(buses);
             }
             return _mostPopularBus;
         }
@@ -93,7 +93,7 @@ namespace OOP_Passenger_Operations
         {
             if (_maxConditionBus == null)
             {
-                _maxConditionBus = TransportManager.ReturnMaxConditionBus(buses);
+                _maxConditionBus = StateBusInspection.ReturnMaxConditionBus(buses);
             }
             return _maxConditionBus;
         }
@@ -103,7 +103,7 @@ namespace OOP_Passenger_Operations
         {
             if (_minConditionBus == null)
             {
-                _minConditionBus = TransportManager.ReturnMinConditionBus(buses);
+                _minConditionBus = StateBusInspection.ReturnMinConditionBus(buses);
             }
             return _minConditionBus;
         }

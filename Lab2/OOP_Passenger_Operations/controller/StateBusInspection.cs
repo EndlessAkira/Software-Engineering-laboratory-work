@@ -1,57 +1,9 @@
-﻿using OOP_Passenger_Operations.data;
-using OOP_Passenger_Operations.model;
+﻿using OOP_Passenger_Operations.model.other;
 
 namespace OOP_Passenger_Operations
 {
-    internal class TransportManager
+    internal class StateBusInspection
     {
-
-        private static List<string> _busModels = new List<string>()
-        {
-            "МАЗ-241",
-            "МАЗ-103",
-            "МАЗ-251",
-            "МАЗ-107",
-            "МАЗ-152",
-            "МАЗ-216",
-        };
-        private static Dictionary<string, int> _busCapacity = new Dictionary<string, int>()
-        {
-            ["МАЗ-241"] = 20,
-            ["МАЗ-103"] = 100,
-            ["МАЗ-251"] = 125,
-            ["МАЗ-107"] = 45,
-            ["МАЗ-152"] = 45,
-            ["МАЗ-216"] = 190
-        };
-
-
-
-        // Метод генерации модели автобуса
-        public static string GenerateBusModel()
-        {
-            return _busModels[new Random().Next(_busModels.Count - 1)];
-        }
-        // Метод генерации гаражного номера
-        public static string GenerateGarageNumber()
-        {
-            int intNumber = new Random().Next(0, 10000);
-            string number = Convert.ToString(intNumber);
-            return number;
-        }
-        // Метод генерации вместительности автобуса
-        public static int GenerateBusCapacity(string _busModel)
-        {
-            return _busCapacity[_busModel];
-        }
-        // Метод генерации процента изношенности автобуса
-        public static int GenerateBusCondition()
-        {
-            return new Random().Next(0, 100);
-        }
-
-
-
         // Метод поиска самого вместительного автобуса компании
         public static Bus ReturnMostCapaciousBus(Bus[] _buses)
         {
@@ -116,22 +68,22 @@ namespace OOP_Passenger_Operations
 
 
         // Метод возврата общей вместительности автобусов всех компаний
-        public int ReturnTotalCapacity(TransportParks transportParks)
+        public int ReturnTotalCapacity(NationalBusPark transportParks)
         {
             return 0;
         }
         // Метод возврата самой вместительной модели автобуса из всех компаний
-        public string ReturnCapacityModel(TransportParks transportParks)
+        public string ReturnCapacityModel(NationalBusPark transportParks)
         {
             return "хухуй";
         }
         // Метод возврата самой популярной модели автобуса из всех компаний
-        public string ReturnPopularModel(TransportParks transportParks)
+        public string ReturnPopularModel(NationalBusPark transportParks)
         {
             return "хуй";
         }
         // Метод возврата маскимального процента изношенности автобуса из всех компаний
-        public int ReturnMaxCondition(TransportParks transportParks)
+        public int ReturnMaxCondition(NationalBusPark transportParks)
         {
             List<Bus> list = new();
             for (int i = 0; i < transportParks._parks.Count; i++)
@@ -149,7 +101,7 @@ namespace OOP_Passenger_Operations
             return _maxCondition;
         }
         // Метод возврата минимального процента изношенности автобуса из всех компаний
-        public int ReturnMinCondition(TransportParks transportParks)
+        public int ReturnMinCondition(NationalBusPark transportParks)
         {
             List<Bus> list = new();
             for (int i = 0; i < transportParks._parks.Count; i++)
@@ -170,7 +122,7 @@ namespace OOP_Passenger_Operations
 
 
 
-        public string ReturnTotalTransportInfo(TransportParks _transportParks, TransportParks.TransportParkList park)
+        public string ReturnTotalTransportInfo(NationalBusPark _transportParks, NationalBusPark.TransportParkList park)
         {
             int _currentParkIndex = (int)park;
             OblAvtoTrans _currentBusPark = _transportParks._parks[_currentParkIndex];

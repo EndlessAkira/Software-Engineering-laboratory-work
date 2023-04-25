@@ -1,4 +1,4 @@
-﻿namespace OOP_Passenger_Operations.data
+﻿namespace OOP_Passenger_Operations.model.other
 {
     internal class Bus
     {
