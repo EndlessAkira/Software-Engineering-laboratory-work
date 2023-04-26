@@ -73,7 +73,7 @@
         {
             MenuItem[] _menuItems =
             {
-                //new MenuItem("Получить общую инфо о Национальном Автопарке", true , GetInfoAboutNationalBusPark),
+                new MenuItem("Получить общую инфо о Национальном Автопарке", true , GetInfoAboutNationalBusPark),
                 new MenuItem("Получить инфо об отдельном автопарке", true , GetInfoAboutBusPark),
                 new MenuItem("Выйти из меню", true, LocalExit),
             };

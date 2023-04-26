@@ -39,6 +39,7 @@ namespace OOP_Passenger_Operations.model.other
         }
         public int GetSizeBusPark() => buses.Length;
         public string GetBusParkName() => _busParkName;
+        public Bus GetBus(int id) => buses[id]; 
 
 
 
