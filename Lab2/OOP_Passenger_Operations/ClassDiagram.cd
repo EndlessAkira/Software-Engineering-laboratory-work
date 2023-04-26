@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OOP_Passenger_Operations.controller.MinskAutomobileFactory">
+    <Position X="23" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABIgAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAA=</HashCode>
+      <FileName>controller\MinskAutomobileFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.NationalBusPark">
+    <Position X="18.5" Y="9.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="OOP_Passenger_Operations.NationalBusPark.TransportParkList">
+        <TypeIdentifier>
+          <NewMemberFileName>controller\NationalBusPark.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAJAQAAAAABAAAAACAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controller\NationalBusPark.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.StateBusInspection">
+    <Position X="20.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEQEBAABAAAAAAEAAAAAAAABCAAAAAAIAAAAAAAABA=</HashCode>
+      <FileName>controller\StateBusInspection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.User">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.other.Bus">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAQAAAAAAAAIAAAAQAAAgABAAAAIAAAAACAAA=</HashCode>
+      <FileName>model\other\Bus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.other.OblAvtoTrans">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAERgAQAISgAAAEAAAAAAAAQAAAQAAQAAAAIA=</HashCode>
+      <FileName>model\other\OblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.BrestOblAvtoTrans">
+    <Position X="7.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\BrestOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.GomelOblAvtoTrans">
+    <Position X="12.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\GomelOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.GrognoOblAvtoTrans">
+    <Position X="1" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\GrognoOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.MinskOblAvtoTrans">
+    <Position X="5.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\MinskOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.MinskTrans">
+    <Position X="10" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\MinskTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.MogilevOblAvtoTrans">
+    <Position X="14.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\MogilevOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.model.VitebskOblAvtoTrans">
+    <Position X="3.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>model\VitebskOblAvtoTrans.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.user.NationalBusParkApplication">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAEAKDAABIGCAAgAgARAAAAAwAAIAIAAEAAAAA=</HashCode>
+      <FileName>user\NationalBusParkApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.user.MenuItem">
+    <Position X="21.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACIAAAAA=</HashCode>
+      <FileName>user\NationalBusParkApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OOP_Passenger_Operations.user.ModMenuItem">
+    <Position X="21.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAACIAAAAA=</HashCode>
+      <FileName>user\NationalBusParkApplication.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
