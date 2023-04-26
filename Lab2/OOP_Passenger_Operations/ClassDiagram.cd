@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="OOP_Passenger_Operations.controller.MinskAutomobileFactory">
-    <Position X="23" Y="9.25" Width="1.5" />
+    <Position X="7.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAAAABIgAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAA=</HashCode>
       <FileName>controller\MinskAutomobileFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.NationalBusPark">
-    <Position X="18.5" Y="9.25" Width="1.5" />
+    <Position X="5" Y="1.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -25,30 +25,30 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.StateBusInspection">
-    <Position X="20.75" Y="9.25" Width="1.5" />
+    <Position X="7.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEQEBAABAAAAAAEAAAAAAAABCAAAAAAIAAAAAAAABA=</HashCode>
       <FileName>controller\StateBusInspection.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.User">
-    <Position X="14.5" Y="0.5" Width="1.5" />
+    <Position X="1" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.model.other.Bus">
-    <Position X="5" Y="2.5" Width="1.5" />
+    <Position X="11.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAQAAAAAAAAIAAAAQAAAgABAAAAIAAAAACAAA=</HashCode>
       <FileName>model\other\Bus.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.model.other.OblAvtoTrans">
-    <Position X="7.75" Y="2.5" Width="1.5" />
+    <Position X="9.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIACAAAAERgAQAISgAAAEAAAAAAAAQAAAQAAQAAAAIA=</HashCode>
+      <HashCode>AIACAAAAERgAQAISgAAAEAAAAAAAAQAAAQIAQAAAAIA=</HashCode>
       <FileName>model\other\OblAvtoTrans.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -102,21 +102,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.user.NationalBusParkApplication">
-    <Position X="18.5" Y="1.75" Width="1.5" />
+    <Position X="3" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAABAAEAKDAABIGCAAgAgARAAAAAwAAIAIAAEAAAAA=</HashCode>
       <FileName>user\NationalBusParkApplication.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.user.MenuItem">
-    <Position X="21.25" Y="1.75" Width="1.5" />
+    <Position X="14" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAACIAAAAA=</HashCode>
       <FileName>user\NationalBusParkApplication.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OOP_Passenger_Operations.user.ModMenuItem">
-    <Position X="21.25" Y="4.5" Width="1.5" />
+    <Position X="14" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAACIAAAAA=</HashCode>
       <FileName>user\NationalBusParkApplication.cs</FileName>
