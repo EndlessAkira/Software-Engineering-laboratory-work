@@ -1,8 +1,8 @@
 ﻿namespace OOP_Passenger_Operations.controller
 {
-    internal abstract class MinskAutomobileFactory
+    public abstract class MinskAutomobileFactory
     {
-        private static List<string> _busModels = new List<string>()
+        public static readonly List<string> _busModels = new List<string>()
         {
             "МАЗ-241",
             "МАЗ-103",
@@ -11,7 +11,7 @@
             "МАЗ-152",
             "МАЗ-216",
         };
-        private static Dictionary<string, int> _busCapacity = new Dictionary<string, int>()
+        public static readonly Dictionary<string, int> _busCapacity = new Dictionary<string, int>()
         {
             ["МАЗ-241"] = 20,
             ["МАЗ-103"] = 100,

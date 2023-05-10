@@ -3,11 +3,11 @@ using OOP_Passenger_Operations.model.other;
 
 namespace OOP_Passenger_Operations
 {
-    internal class NationalBusPark
+    public class NationalBusPark
     {
         public static readonly int _numberOfRegions = 7;
-        public List<OblAvtoTrans> _parks = new List<OblAvtoTrans>();
-        internal enum TransportParkList
+        internal List<OblAvtoTrans> _parks = new List<OblAvtoTrans>();
+        public enum TransportParkList
         {
             BrestOblAvtoTrans,
             VitebskOblAvtoTrans,
@@ -90,4 +90,3 @@ namespace OOP_Passenger_Operations
         }
     }
 }
-

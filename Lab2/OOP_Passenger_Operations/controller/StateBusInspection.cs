@@ -2,7 +2,7 @@
 
 namespace OOP_Passenger_Operations
 {
-    internal class StateBusInspection
+    public class StateBusInspection
     {
         // Метод поиска самого вместительного автобуса компании
         public static Bus ReturnMostCapaciousBus(Bus[] _buses)

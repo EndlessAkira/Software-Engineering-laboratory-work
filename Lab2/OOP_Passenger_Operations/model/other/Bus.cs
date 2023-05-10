@@ -1,6 +1,6 @@
 ﻿namespace OOP_Passenger_Operations.model.other
 {
-    internal class Bus
+    public class Bus
     {
         // Название модели
         private string _modelName;

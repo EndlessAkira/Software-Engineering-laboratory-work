@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP_Passenger_Operations", "OOP_Passenger_Operations.csproj", "{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP_Passenger_Operations", "OOP_Passenger_Operations.csproj", "{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "..\TestProject1\TestProject.csproj", "{EC75A7D4-DFD7-4C2D-AE0E-2EA5C22958EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADEB3BB4-AF4E-4476-85F4-B1E35A996FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC75A7D4-DFD7-4C2D-AE0E-2EA5C22958EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC75A7D4-DFD7-4C2D-AE0E-2EA5C22958EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC75A7D4-DFD7-4C2D-AE0E-2EA5C22958EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC75A7D4-DFD7-4C2D-AE0E-2EA5C22958EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
